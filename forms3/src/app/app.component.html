@@ -1,0 +1,34 @@
+<!--<div>-->
+<!--  <form #myForm='ngForm' (ngSubmit)="submitForm(myForm)">-->
+<!--    <div>Имя: <input name="name" ngModel></div>-->
+<!--    <div>Возраст: <input name="age" ngModel></div>-->
+<!--    <div>Профессия: <input name="profession" ngModel></div>-->
+<!--    <button type="submit">Отправить</button>-->
+<!--&lt;!&ndash;    <button (click)="myForm.reset()">Очистить</button>&ndash;&gt;-->
+<!--  </form>-->
+<!--</div>-->
+
+<!--&lt;!&ndash;реактиваня форма&ndash;&gt;-->
+<!--<div>-->
+<!--  <form [formGroup]="myForm" (ngSubmit)="submitFrom()">-->
+<!--    <div>Имя: <input formControlName="name"></div>-->
+<!--    <div>Возраст: <input formControlName="age" ></div>-->
+<!--    <div *ngIf="myForm.invalid && myForm.touched" style="color: red">Введите число</div>-->
+<!--    <div>Профессия: <input formControlName="profession"></div>-->
+<!--    <button [disabled]="myForm.invalid" type="submit">Отправить</button>-->
+<!--&lt;!&ndash;    <button (click)="myForm.reset()">Очистить</button>&ndash;&gt;-->
+<!--  </form>-->
+<!--</div>-->
+
+
+<!--шаблонная форма-->
+<div>
+  <form #f='ngForm' (ngSubmit)="submitFrom(f)">
+    <div>Имя: <input name="name" ngModel></div>
+    <div>Возраст: <input name="age" required pattern="^[0-9]+$" ngModel></div>
+    <div *ngIf="f.invalid && f.touched" style="color: red">Введите число</div>
+    <div>Профессия: <input name="profession" ngModel></div>
+    <button [disabled]="f.invalid" type="submit">Отправить</button>
+    <!--    <button (click)="myForm.reset()">Очистить</button>-->
+  </form>
+</div>
